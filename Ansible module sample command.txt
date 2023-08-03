@@ -1,0 +1,6 @@
+ansible demo -b -m yum -a "pkg=httpd state=present" => To install httpd package
+ansible demo -b -m service -a "name=httpd state=started" => To start httpd service
+ansible demo -b -m user -a "name=sudarshan" => To create user
+ansible demo -b -m setup => To get all nodes system information
+ansible demo -b -m setup -a "filter=*ipv4*" => To filter only IPv4 address from all nodes
+
