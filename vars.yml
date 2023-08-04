@@ -1,0 +1,10 @@
+--- #ansible plabook with variable
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  vars:
+   pkgname: httpd
+  tasks:
+   - name: Install httpd on linux for all nodes on demo group
+     action: yum name='{{pkgname}}' state=present

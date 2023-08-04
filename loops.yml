@@ -1,0 +1,14 @@
+--- # Ansible playbook with loops
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+  - name: Add user to all the nodes with demo group
+    user: name='{{item}}' state=present
+    with_items:
+     - sachin
+     - sourav_ganguly
+     - yuvraj
+     - dhoni
+

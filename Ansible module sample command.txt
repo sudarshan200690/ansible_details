@@ -4,3 +4,8 @@ ansible demo -b -m user -a "name=sudarshan" => To create user
 ansible demo -b -m setup => To get all nodes system information
 ansible demo -b -m setup -a "filter=*ipv4*" => To filter only IPv4 address from all nodes
 
+Ansible Playbook command:
+========================
+ansible-playbook <playbook name> --check => to dry run for this playbook
+ansible-playbook <playbook name> => To run the playbook
+

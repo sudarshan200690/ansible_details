@@ -1,0 +1,9 @@
+--- #ansible playbook with task
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+  - name: Install httpd on linux for all nodes on demo group
+    action: yum name=httpd state=installed
+

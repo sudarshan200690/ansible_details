@@ -1,0 +1,14 @@
+--- # Ansible playbook with handlers
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  vars:
+   pkgname: httpd
+  tasks:
+   - name: install httpd on linux system for all host under demo group
+     action: yum name='{{pkgname}}' state=present
+     notify: restart httpd server
+  handlers:
+   - name: restart httpd server
+     action: service name='{{pkgname}}' state=restarted
